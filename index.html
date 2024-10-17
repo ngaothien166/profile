@@ -14,20 +14,20 @@
             margin: 0;
             color: #fff; 
             text-align: center;
-            position: relative; /* Thêm để tạo vị trí cho video */
-            overflow: hidden; /* Để ẩn video nếu nó vượt ra ngoài */
+            position: relative; 
+            overflow: hidden; 
         }
 
         video {
-            position: absolute; /* Đặt video ở vị trí tuyệt đối */
+            position: absolute; 
             top: 50%;
             left: 50%;
-            min-width: 100%; /* Đảm bảo video luôn lấp đầy toàn bộ chiều rộng */
-            min-height: 100%; /* Đảm bảo video luôn lấp đầy toàn bộ chiều cao */
+            min-width: 100%; 
+            min-height: 100%; 
             width: auto;
             height: auto;
-            z-index: -1; /* Đặt video phía sau nội dung */
-            transform: translate(-50%, -50%); /* Căn giữa video */
+            z-index: -1; 
+            transform: translate(-50%, -50%); 
         }
 
         .container {
@@ -113,8 +113,12 @@
 <body>
     <video autoplay loop muted>
         <source src="video1.mp4" type="video/mp4"> 
-        Your browser does not support the video tag.
+        Trình duyệt của bạn không hỗ trợ thẻ video.
     </video>
+    <audio autoplay loop playsinline>
+        <source src="1.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
     <div class="container">
         <h1>Không có gì để nhìn, cũng không có gì để nói</h1>
         <a href="https://www.facebook.com/ngaothien1606/" target="_blank">
