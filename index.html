@@ -15,17 +15,30 @@
             background-size: cover; 
             background-position: center; 
             margin: 0;
-            color: #333;
+            color: #fff; /* Đổi màu chữ mặc định thành trắng */
             text-align: center;
         }
         .container {
             padding: 40px;
-            background-color: rgba(255, 255, 255, 0.6); 
+            background-color: rgba(30, 30, 30, 0.8); /* Màu nền tối để làm nổi bật các thành phần */
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
             backdrop-filter: blur(10px); 
+            animation: fadeIn 1s ease-in-out; 
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .container:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
@@ -33,32 +46,70 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #1a73e8;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            color: #1e90ff; /* Màu xanh galaxy cho tiêu đề */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s ease-in-out;
         }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         a {
             text-decoration: none;
-            color: #fff;
+            color: #1e90ff; /* Màu xanh galaxy cho chữ liên kết */
             font-size: 1.5em;
             margin: 15px;
-            display: inline-block;
+            display: inline-flex; 
+            align-items: center;
             padding: 10px 25px;
             border-radius: 25px;
-            background-color: #1a73e8;
-            transition: background-color 0.3s, transform 0.3s;
+            background-color: rgba(30, 30, 30, 0.7); /* Màu nền cho liên kết */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
+
         a:hover {
-            background-color: #1666c1;
-            transform: translateY(-3px);
+            background-color: rgba(30, 144, 255, 0.7); /* Màu nền khi hover */
+            transform: translateY(-3px) scale(1.05); 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 0.5s ease-in-out; 
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        img {
+            width: 25px; 
+            height: 25px; 
+            margin-right: 10px; 
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Không có gì để nhìn, cũng không có gì để nói</h1>
-        <a href="https://www.facebook.com/ngaothien1606/" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/exanimaate?fbclid=IwY2xjawF-EhFleHRuA2FlbQIxMAABHZTwzt1uiCXzlMFrSZxXOKgC0hULKRogWTskvcI3fSrK6kRhzk3KOEdHxQ_aem_ROF3G-oRmhuRApr1P6uViA" target="_blank">Instagram</a>
-        <a href="https://zalo.me/0984726460" target="_blank">Zalo</a> 
+        <a href="https://www.facebook.com/ngaothien1606/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">Facebook
+        </a>
+        <a href="https://www.instagram.com/exanimaate?fbclid=IwY2xjawF-EhFleHRuA2FlbQIxMAABHZTwzt1uiCXzlMFrSZxXOKgC0hULKRogWTskvcI3fSrK6kRhzk3KOEdHxQ_aem_ROF3G-oRmhuRApr1P6uViA" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">Instagram
+        </a>
+        <a href="https://zalo.me/0984726460" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo">Zalo
+        </a> 
+    </div>
 </body>
 </html>
