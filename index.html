@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,32 +13,32 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: #fff; 
+            color: #fff;
             text-align: center;
-            position: relative; 
-            overflow: hidden; 
+            position: relative;
+            overflow: hidden;
         }
 
         video {
-            position: absolute; 
+            position: absolute;
             top: 50%;
             left: 50%;
-            min-width: 100%; 
-            min-height: 100%; 
+            min-width: 100%;
+            min-height: 100%;
             width: auto;
             height: auto;
-            z-index: -1; 
-            transform: translate(-50%, -50%); 
+            z-index: -1;
+            transform: translate(-50%, -50%);
         }
 
         .container {
             padding: 40px;
-            background-color: rgba(30, 30, 30, 0.8); 
+            background-color: rgba(30, 30, 30, 0.8);
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(10px); 
-            animation: fadeIn 1s ease-in-out; 
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -45,6 +46,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -55,10 +57,11 @@
             transform: scale(1.05);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #1e90ff; 
+            color: #1e90ff;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             animation: slideIn 0.5s ease-in-out;
         }
@@ -68,6 +71,7 @@
                 transform: translateY(-20px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -76,49 +80,59 @@
 
         a {
             text-decoration: none;
-            color: #1e90ff; 
+            color: #1e90ff;
             font-size: 1.5em;
             margin: 15px;
-            display: inline-flex; 
+            display: inline-flex;
             align-items: center;
             padding: 10px 25px;
             border-radius: 25px;
-            background-color: rgba(30, 30, 30, 0.7); 
+            background-color: rgba(30, 30, 30, 0.7);
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         a:hover {
             background-color: rgba(30, 144, 255, 0.7);
-            transform: translateY(-3px) scale(1.05); 
+            transform: translateY(-3px) scale(1.05);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation: pulse 0.5s ease-in-out; 
+            animation: pulse 0.5s ease-in-out;
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.1);
             }
         }
 
         img {
-            width: 25px; 
-            height: 25px; 
-            margin-right: 10px; 
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
         }
     </style>
-   <script>
-    window.addEventListener('load', function() {
-        const audio = document.getElementById('audio');
-        audio.muted = false;
-        audio.play().catch(error => {
-            console.log('Tự động phát không được phép:', error);
-        });
-    });
-</script>
+    <script>
+        window.onload = function () {
+            const audio = document.getElementById('audio');
+
+            // Kiểm tra trạng thái lưu trữ
+            const isMuted = localStorage.getItem('audioMuted') === 'true';
+            audio.muted = isMuted;
+
+            // Tự động phát
+            audio.play().catch(error => {
+                console.log('Không thể tự động phát âm thanh:', error);
+            });
+
+    </script>
+
 </head>
+
 <body>
     <video autoplay loop muted playsinline>
         <source src="video1.mp4" type="video/mp4">
@@ -127,18 +141,22 @@
     <audio id="audio" autoplay loop>
         <source src="1.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ thẻ audio.
-    </audio>  
+    </audio>
     <div class="container">
         <h1>Không có gì để nhìn, cũng không có gì để nói</h1>
         <a href="https://www.facebook.com/ngaothien1606/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">Facebook
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                alt="Facebook Logo">Facebook
         </a>
-        <a href="https://www.instagram.com/exanimaate?fbclid=IwY2xjawF-EhFleHRuA2FlbQIxMAABHZTwzt1uiCXzlMFrSZxXOKgC0hULKRogWTskvcI3fSrK6kRhzk3KOEdHxQ_aem_ROF3G-oRmhuRApr1P6uViA" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">Instagram
+        <a href="https://www.instagram.com/exanimaate?fbclid=IwY2xjawF-EhFleHRuA2FlbQIxMAABHZTwzt1uiCXzlMFrSZxXOKgC0hULKRogWTskvcI3fSrK6kRhzk3KOEdHxQ_aem_ROF3G-oRmhuRApr1P6uViA"
+            target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                alt="Instagram Logo">Instagram
         </a>
         <a href="https://zalo.me/0984726460" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo">Zalo
-        </a> 
+        </a>
     </div>
 </body>
+
 </html>
