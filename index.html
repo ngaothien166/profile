@@ -116,21 +116,15 @@
             margin-right: 10px;
         }
     </style>
-    <script>
-        window.onload = function () {
+     <script>
+        window.addEventListener('load', function () {
             const audio = document.getElementById('audio');
-
-            // Kiểm tra trạng thái lưu trữ
-            const isMuted = localStorage.getItem('audioMuted') === 'true';
-            audio.muted = isMuted;
-
-            // Tự động phát
+            audio.muted = true;
             audio.play().catch(error => {
-                console.log('Không thể tự động phát âm thanh:', error);
+                console.log('Tự động phát không được phép:', error);
             });
-
+        });
     </script>
-
 </head>
 
 <body>
