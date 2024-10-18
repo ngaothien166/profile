@@ -109,21 +109,21 @@
             margin-right: 10px; 
         }
     </style>
-    <script>
-        window.onload = function() {
-            const audio = document.getElementById('audio');
-            audio.muted = false;
-            audio.play().catch(error => {
-                console.log('Tự động phát không được phép do trình duyệt hạn chế:', error);
-            });
-        };
-    </script>
+   <script>
+    window.addEventListener('load', function() {
+        const audio = document.getElementById('audio');
+        audio.muted = false;
+        audio.play().catch(error => {
+            console.log('Tự động phát không được phép:', error);
+        });
+    });
+</script>
 </head>
 <body>
-   <video autoplay loop muted playsinline>
-    <source src="video1.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ thẻ video.
-</video>
+    <video autoplay loop muted playsinline>
+        <source src="video1.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+    </video>
     <audio id="audio" autoplay loop>
         <source src="1.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ thẻ audio.
