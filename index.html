@@ -116,15 +116,17 @@
             margin-right: 10px;
         }
     </style>
-     <script>
-        window.addEventListener('load', function () {
+    <script>
+        window.onload = function () {
             const audio = document.getElementById('audio');
-            audio.muted = true;
+            audio.currentTime = 0; // Đặt thời gian phát lại từ đầu
+            audio.muted = false; // Bật âm thanh nếu cần thiết
             audio.play().catch(error => {
-                console.log('Tự động phát không được phép:', error);
+                console.log('Không thể tự động phát âm thanh:', error);
             });
-        });
+        };
     </script>
+
 </head>
 
 <body>
@@ -133,7 +135,7 @@
         Trình duyệt của bạn không hỗ trợ thẻ video.
     </video>
     <audio id="audio" autoplay loop>
-        <source src="1.mp3" type="audio/mpeg">
+        <source src="1.mp3?nocache=<?php echo time(); ?>" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ thẻ audio.
     </audio>
     <div class="container">
