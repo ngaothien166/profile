@@ -141,19 +141,29 @@
         </a>
         <a href="https://zalo.me/0984726460" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo">Zalo
-        </a>
-        
+        </a>                   
     </div>
-     <script>
-        window.onload = function () {
-            const audio = document.getElementById('audio');
-            audio.currentTime = 0; // Đặt thời gian phát lại từ đầu
-            audio.muted = false; // Bật âm thanh nếu cần thiết
+    <script>
+        window.onload = function() {
+          const audio = document.getElementById('audio');
+          const playButton = document.getElementById('playButton');
+          const isAutoplaySupported = () => {
+            return true; 
+          };
+          if (isAutoplaySupported()) {
             audio.play().catch(error => {
-                console.log('Không thể tự động phát âm thanh:', error);
+              console.error('Không thể tự động phát:', error);
             });
+          }        
+          playButton.addEventListener('click', () => {
+            if (audio.paused) {
+              audio.play();
+            } else {
+              audio.pause();
+            }
+          });
         };
-    </script>
+        </script>
 </body>
 
 </html>
