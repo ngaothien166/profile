@@ -139,6 +139,16 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo">Zalo
         </a>
     </div>
+    <script>
+        // Bỏ tắt tiếng khi phát video
+        const video = document.getElementById('myVideo');
+        video.muted = false;
+
+        // Tự động phát video khi người dùng bấm vào trang
+        document.addEventListener('click', () => {
+            video.play();
+        });
+    </script>
 </body>
 
 </html>
