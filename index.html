@@ -99,7 +99,6 @@
         }
 
         @keyframes pulse {
-
             0%,
             100% {
                 transform: scale(1);
@@ -120,7 +119,7 @@
 </head>
 
 <body>
-     <video id="myVideo" autoplay muted loop playsinline>
+    <video id="myVideo" autoplay loop playsinline>
         <source src="2.mp4" type="video/mp4">
         Trình duyệt của bạn không hỗ trợ thẻ video.
     </video>
@@ -139,9 +138,16 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo">Zalo
         </a>
     </div>
-     <script>
+
+    <script>
         const video = document.getElementById('myVideo');
-        video.muted = false;
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            video.muted = true;
+        } else {
+            video.muted = false;
+        }
     </script>
 </body>
 
