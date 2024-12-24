@@ -119,7 +119,7 @@
 </head>
 
 <body>
-    <video id="myVideo" autoplay loop playsinline>
+    <video id="myVideo" autoplay loop playsinline muted>
         <source src="2.mp4" type="video/mp4">
         Trình duyệt của bạn không hỗ trợ thẻ video.
     </video>
@@ -142,11 +142,18 @@
     <script>
         const video = document.getElementById('myVideo');
 
+        document.body.addEventListener("click", function () {
+            if (video.muted) {
+                video.muted = false;
+                video.play();
+            }
+        });
+
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) {
-            video.muted = true;
+            video.muted = true; // Mặc định tắt âm thanh trên thiết bị di động
         } else {
-            video.muted = false;
+            video.muted = false; // Bật âm thanh trên desktop
         }
     </script>
 </body>
