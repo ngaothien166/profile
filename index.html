@@ -187,16 +187,9 @@
                 video.play();
             }
         });
-
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        video.muted = isMobile ? true : false;
-        const video = document.getElementById('bgVideo');
-    const fallback = document.getElementById('fallback');
-    video.addEventListener('error', () => fallback.classList.add('show'));
-    // Một số WebView không autoplay dù muted -> nếu paused sau 1s, hiển thị fallback
-    setTimeout(() => { if (video.paused) fallback.classList.add('show'); }, 1200);
     </script>
 </body>
 
 </html>
+
 
