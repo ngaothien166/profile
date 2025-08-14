@@ -187,9 +187,10 @@
                 video.play();
             }
         });
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        video.muted = isMobile ? true : false;
     </script>
 </body>
 
 </html>
-
-
