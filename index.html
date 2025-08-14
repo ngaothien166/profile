@@ -191,25 +191,6 @@
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         video.muted = isMobile ? true : false;
     </script>
-    <script>
-const video = document.getElementById('myVideo');
-
-// Kiểm tra khi load
-video.addEventListener('error', () => {
-    document.body.style.background = "url('fallback.jpg') center/cover no-repeat";
-});
-
-// Nếu Zalo WebView chặn autoplay → phát khi click
-document.body.addEventListener("touchstart", () => {
-    if (video.paused) {
-        video.play().catch(() => {
-            document.body.style.background = "url('fallback.jpg') center/cover no-repeat";
-        });
-    }
-}, { once: true });
-</script>
-
 </body>
 
 </html>
-
